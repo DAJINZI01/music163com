@@ -46,7 +46,7 @@ def add_to_16(text):
     :param text: 要加密的文本
     :return:
     """
-    text += b"\x01" * (16 - len(text) % 16) # 注意是 \x07 不是 \x00
+    text += b"\x01" * (16 - len(text) % 16) # 注意是 不是 \x00
     return text
 
 
