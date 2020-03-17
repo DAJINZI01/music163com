@@ -17,7 +17,7 @@ class MyBaseSpider(object):
 
     def my_log(self, msg):
         """记录一些日志信息"""
-        self.f.write("[{}] {}".format(time.strftime("%Y/%m/%D %H:%M:%S", time.localtime()), msg))
+        self.f.write("[{}] {}\n".format(time.strftime("%Y/%m/%D %H:%M:%S", time.localtime()), msg))
         self.f.flush()
 
     def my_get(self, url, stream=False):
