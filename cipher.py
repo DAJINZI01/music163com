@@ -6,8 +6,6 @@ import codecs
 import json
 import base64
 
-from test import WangYiYun as t1
-from t2 import WangYiYun as t2
 
 """
 /*
@@ -118,8 +116,6 @@ def encrypt_WangYiYun(plaintext, pub_key=PUB_KEY, modulus=MODULUS, key=KEY):
 
 
 if __name__ == "__main__":
-    w1 = t1()
-    w2 = t2()
     # s = get_random_str(16)
     # print(s)
     # print(encrypt_AES(get_random_str(16), get_random_str(16), IV))
@@ -135,11 +131,4 @@ if __name__ == "__main__":
     i7b_json = b'{"id":"1430652542","c":"[{\"id\":\"1430652542\"}]","csrf_token":""}'
     print(i7b)
     print(i7b_json)
-    item = encrypt_WangYiYun(i7b)
-    print(item)
-    item = w1.encrypt(i7b)
-    print(item)
-    item = w2.encrypt(i7b)
-    print(item)
-    item = w2.encrypt(i7b_json)
-    print(item)
+    print(encrypt_WangYiYun(i7b))
