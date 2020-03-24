@@ -167,4 +167,10 @@ i7b = {
     "csrf_token": ""
 }
 ```
+> 下面是程序运行的部分截图
 
+![result01.png](images/result01.png)
+
+> 一个歌曲: 歌曲的详细信息，尽可能的保留了下来。如作者、年份、流派、还有歌词内置（不过好像不是同步的歌词，这点有待改进）
+
+![result02.png](images/result02.png)
