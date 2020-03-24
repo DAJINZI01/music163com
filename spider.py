@@ -49,7 +49,7 @@ class Music163Com(MyBaseSpider):
         # 2. 获取歌曲实例
         song = self.api.get_detail(id)["songs"][0]
         # 3. 判断文件是否存在
-        file_name = "{}/{}.m4a".format(mp3_folder, song["name"])
+        file_name = "{}/{}.m4a".format(mp3_folder, re.sub(r'"', "-", song["name"]))
         if os.path.exists(file_name):
             print("[{}] already exists.".format(file_name))
             return file_name

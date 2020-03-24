@@ -48,7 +48,13 @@ class Music163ComAPI(object):
         """
         lyric = copy.deepcopy(url_json["lyric"])
         lyric["json"]["id"] %= id
-        return self.__get_data(lyric)["lrc"]["lyric"]
+        data = self.__get_data(lyric)
+        # {'nolyric': True, 'sgc': False, 'sfy': True, 'qfy': True, 'needDesc': True, 'code': 200, 'briefDesc': None}
+        # 没有歌词
+        if data.get("nolyric"):
+            return ""
+        else:
+            return data["lrc"]["lyric"]
 
     def get_player(self, id):
         """
@@ -182,11 +188,9 @@ class Music163ComAPI(object):
         return data
 
 
-
-
 if __name__ == "__main__":
     m163 = Music163ComAPI()
-    # print(m163.get_lyric(1329491587))
+    print(m163.get_lyric(440353010))
     # print(m163.get_player(1329491587))
     # print(json.dumps(m163.get_comments(1329491587), ensure_ascii=False))
     # print(json.dumps(m163.get_detail(1329491587), ensure_ascii=False))
