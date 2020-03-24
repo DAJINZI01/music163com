@@ -2,6 +2,7 @@
 import requests
 import time
 
+
 class MyBaseSpider(object):
     """自定义爬虫基类"""
     def __init__(self, my_log_file_name="my.log"):
